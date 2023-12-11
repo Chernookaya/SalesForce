@@ -25,5 +25,4 @@ public class SearchInput {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(String.format(optionLocator, text))));
         driver.findElement(By.xpath(String.format(optionLocator, text))).click();
     }
-
 }
