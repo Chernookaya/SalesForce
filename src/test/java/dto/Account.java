@@ -1,6 +1,17 @@
-package pages;
+package dto;
 
-public class AccountConstructor {
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+
+public class Account {
     String accountName;
     String parentAccount;
     String accountNumber;
@@ -29,7 +40,7 @@ public class AccountConstructor {
     String shippingCountry;
     String customerPriority;
 
-    public AccountConstructor(String accountName, String parentAccount, String accountNumber, String accountSite,
+    public Account(String accountName, String parentAccount, String accountNumber, String accountSite,
                               String type, String industry, String annualRevenue, String rating, String phone,
                               String fax, String website, String ticketSymbol, String ownership,
                               String employees, String sicCode, String description, String billingStreet, String billingCity, String billingState,

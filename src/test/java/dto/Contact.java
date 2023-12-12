@@ -1,6 +1,17 @@
-package pages;
+package dto;
 
-public class ContactConstructor {
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+
+public class Contact {
     String Salutation;
     String firstName;
     String lastName;
@@ -18,7 +29,7 @@ public class ContactConstructor {
     String postalCode;
     String mailingCountry;
 
-    public ContactConstructor(String salutation, String firstName, String lastName, String accountName, String title, String email, String phone, String mobile, String reportsTo, String department, String fax, String mailingStreet, String mailingCity, String mailingState, String postalCode, String mailingCountry) {
+    public Contact(String salutation, String firstName, String lastName, String accountName, String title, String email, String phone, String mobile, String reportsTo, String department, String fax, String mailingStreet, String mailingCity, String mailingState, String postalCode, String mailingCountry) {
         Salutation = salutation;
         this.firstName = firstName;
         this.lastName = lastName;
