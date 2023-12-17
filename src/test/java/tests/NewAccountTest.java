@@ -1,8 +1,7 @@
 package tests;
 
+import dto.Account;
 import org.testng.annotations.Test;
-import pages.AccountConstructor;
-import pages.NewAccountPage;
 
 public class NewAccountTest extends BaseTest {
 
@@ -11,7 +10,7 @@ public class NewAccountTest extends BaseTest {
         loginPage.open()
                 .login("drak@tms.sandbox", "Password01!!");
         newAccountPage.open();
-        AccountConstructor account = new AccountConstructor("Antonina_blr_20", "Express Logistics and Transport",
+        Account account = new Account("Antonina_blr_20", "Express Logistics and Transport",
                 "5557799", "1@tut.by", "Customer", "Banking", "222", "Hot",
                 "+375336594160", "80176321578", "tut.by", "DDD", "Public", "Anna",
                 "888", "Как жизнь молодая?", "Avangardnaya", "Minsk", "6",

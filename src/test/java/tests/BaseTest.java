@@ -47,7 +47,7 @@ public abstract class BaseTest {
         newContactPage = new NewContactPage(driver);
     }
 
-    @AfterMethod(alwaysRun = true, description = "Close browser")
+    @AfterMethod(alwaysRun = true)
     public void tearDown() {
         if (driver != null) {
             driver.quit();

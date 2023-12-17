@@ -1,6 +1,8 @@
 package pages;
 
+import dto.Contact;
 import io.qameta.allure.Step;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,6 +11,7 @@ import wrappers.Input;
 import wrappers.SearchInput;
 import wrappers.TextArea;
 
+@Log4j2
 public class NewContactPage extends BasePage {
     private static final By SAVE_BUTTON = By.xpath("//*[@name='SaveEdit']");
 
@@ -29,8 +32,9 @@ public class NewContactPage extends BasePage {
         return this;
     }
 
-    @Step("Create new contact")
-    public void createNewContact(ContactConstructor contact) {
+    @Step("Filling new Contact data")
+    public void createNewContact(Contact contact) {
+        log.info("Filling new Contact data {}", contact);
         new DropDown(driver, "Salutation").selectDropDown(contact.getSalutation());
         new Input(driver, "First Name").write(contact.getFirstName());
         new Input(driver, "Last Name").write(contact.getLastName());
@@ -50,8 +54,9 @@ public class NewContactPage extends BasePage {
 
     }
 
-    @Step("Click 'Save'")
+    @Step("Click Save button")
     public void saveContact() {
+        log.info("Clicking Save button");
         driver.findElement(SAVE_BUTTON).click();
     }
 }

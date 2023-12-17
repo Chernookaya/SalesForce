@@ -2,12 +2,14 @@ package pages;
 
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+@Log4j2
 public class LoginPage extends BasePage {
     public static final By USERNAME_INPUT = By.id("username");
     public static final By PASSWORD_INPUT = By.id("password");
@@ -25,12 +27,14 @@ public class LoginPage extends BasePage {
 
     @Step("Opening login page")
     public LoginPage open() {
+        log.info("Opening login page");
         driver.get(BASE_URL);
         return this;
     }
 
     @Step("login by {user}")
     public MainPage login(String user, String password) {
+        log.info("Login by '{user}'");
         driver.findElement(USERNAME_INPUT).sendKeys(user);
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
         takeScreenshot(driver);
