@@ -17,6 +17,7 @@ public class TextArea {
     }
 
     public void write(String text) {
+        log.info("Writing {} into {}", text, label);
         driver.findElement(By.xpath(String.format(baseTextAreaLocator, label)))
                 .sendKeys(text);
     }

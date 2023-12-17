@@ -19,7 +19,9 @@ public class DropDown {
     }
 
     public void selectDropDown(String option) {
+        log.info("Click button {}", label);
         driver.findElement(By.xpath(String.format(baseDropDownLocator, label))).click();
+        log.info("Select on {}", option , label);
         driver.findElement(By.xpath(String.format(optionLocator, option))).click();
     }
 }

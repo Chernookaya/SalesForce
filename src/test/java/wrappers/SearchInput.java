@@ -22,6 +22,7 @@ public class SearchInput {
     }
 
     public void selectSearch(String text) {
+        log.info("Select {} from {}", text, label);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.findElement(By.xpath(String.format(baseSearchInputLocator, label))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(String.format(optionLocator, text))));

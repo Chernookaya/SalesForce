@@ -16,6 +16,7 @@ public class Input {
     }
 
     public void write(String text) {
+        log.info("Writing {} into {}", text, label);
         driver.findElement(By.xpath(String.format(baseInputLocator, label)))
                 .sendKeys(text);
     }
